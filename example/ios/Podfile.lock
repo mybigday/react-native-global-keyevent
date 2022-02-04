@@ -523,7 +523,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: 50cfe7049167cfc7e83ac5542c6fff0c76791a9b
   React-runtimeexecutor: bbbdb3d8fcf327c6e2249ee71b6ef1764b7dc266
   ReactCommon: 9bac022ab71596f2b0fde1268272543184c63971
-  RNGlobalKeyEvent: 32177ca7606482c0816012f67cd3da5445a653d6
+  RNGlobalKeyEvent: d85985cbf9ad54052d4954fc7f5fe0c1789680fd
   Yoga: 32a18c0e845e185f4a2a66ec76e1fd1f958f22fa
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
