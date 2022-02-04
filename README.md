@@ -108,6 +108,7 @@ type GlobalKeyEvent = {
   alt: boolean,
   meta: boolean,
   capsLock: boolean,
+  fn: boolean,
   numericPad: boolean,
 }
 ```
