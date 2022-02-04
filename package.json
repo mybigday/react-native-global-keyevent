@@ -1,0 +1,29 @@
+{
+  "name": "react-native-global-keyevent",
+  "version": "0.1.0",
+  "description": "React Native module for listen global key event",
+  "author": "Jhen-Jie Hong <developer@jhen.me>",
+  "homepage": "https://github.com/mybigday/react-native-global-keyevent",
+  "repository": "https://github.com/mybigday/react-native-global-keyevent",
+  "keywords": [
+    "react-native",
+    "native-module",
+    "keyevent",
+    "ios",
+    "android"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "release": "./scripts/release.sh"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/runtime": "^7.16.7",
+    "@fugood/eslint-config-react": "^0.4.0",
+    "eslint": "^7.0.0",
+    "lerna": "^4.0.0",
+    "metro-react-native-babel-preset": "^0.67.0"
+  }
+}

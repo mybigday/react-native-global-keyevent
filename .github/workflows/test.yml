@@ -1,0 +1,73 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  test-ios:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+      - uses: actions/setup-node@v2.5.1
+        with:
+          node-version: 16.x
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v2.1.7
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Cache pods
+        uses: actions/cache@v2.1.7
+        with:
+          path: |
+            example/ios/Pods
+            example/ios/build
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+      - name: Run test
+        run: |
+          yarn
+          yarn lint
+          cd example
+          yarn
+
+          cd ios
+          pod repo update
+          pod install
+          cd -
+          xcodebuild -workspace ios/example.xcworkspace -scheme example -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build
+  test-android:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+      - uses: actions/setup-node@v2.5.1
+        with:
+          node-version: 16.x
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v2.1.7
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      # - name: Setup Android Emulator
+      #   run: |
+      #     $ANDROID_HOME/tools/bin/sdkmanager --install emulator
+      #     $ANDROID_HOME/tools/bin/sdkmanager --install "system-images;android-28;google_apis;x86"
+      #     echo no | $ANDROID_HOME/tools/bin/avdmanager create avd --force -n Test -k "system-images;android-28;google_apis;x86"
+      #     $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-window &
+      - name: Build example
+        run: |
+          yarn
+          yarn lint
+          cd example
+          yarn
+          cd android
+          ./gradlew assemblerelease

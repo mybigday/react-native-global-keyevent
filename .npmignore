@@ -1,0 +1,10 @@
+.github
+example
+scripts
+android/build
+ios/RNGlobalKeyEvent.xcodeproj/project.xcworkspace
+ios/RNGlobalKeyEvent.xcodeproj/xcuserdata
+.eslintignore
+.eslintrc.js
+.prettierrc.js
+yarn.lock
