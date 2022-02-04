@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
   s.ios.deployment_target = "9.0"
   s.tvos.deployment_target = "10.0"
-  s.source       = { :git => pkg["repository"], :tag => "master" }
+  s.source       = { :git => pkg["repository"], :tag => "main" }
   s.source_files = "**/*.{h,m}"
   s.requires_arc = true
 
