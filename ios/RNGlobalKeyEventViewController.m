@@ -50,7 +50,6 @@
     return @[];
   }
   RNGlobalKeyEvent *keyEvent = [RNGlobalKeyEvent getSingletonInstance];
-  NSLog(@"keyEvent: test");
   return [keyEvent keyCommands:@selector(rnGlobalKeyInput:)];
 }
 
