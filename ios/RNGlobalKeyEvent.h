@@ -15,5 +15,6 @@
 
 - (void)sendKeyUp:(NSString *)keyString modifierFlags:(UIKeyModifierFlags)modifierFlags;
 - (void)sendKeyDown:(NSString *)keyString modifierFlags:(UIKeyModifierFlags)modifierFlags;
+- (NSMutableArray<UIKeyCommand *> *)keyCommands:(SEL)selector;
 
 @end

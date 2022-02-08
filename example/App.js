@@ -19,64 +19,64 @@ const styles = StyleSheet.create({
 })
 
 export default function App() {
-  const [downEvent, setDownEvent] = useState(null)
+  const [upEvent, setUpEvent] = useState(null)
 
   useEffect(() => {
-    const down = GlobalKeyEvent.addKeyDownListener((evt) => setDownEvent(evt))
-    return () => down.remove()
+    const up = GlobalKeyEvent.addKeyUpListener((evt) => setUpEvent(evt))
+    return () => up.remove()
   })
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
-        Listening key down...
+        Listening key up...
       </Text>
-      {downEvent && (
+      {upEvent && (
         <>
           <Text style={styles.text}>
             Key Code:
             {' '}
-            {downEvent.keyCode}
+            {upEvent.keyCode}
           </Text>
           <Text style={styles.text}>
             Pressed Key:
             {' '}
-            {downEvent.pressedKey}
+            {upEvent.pressedKey}
           </Text>
           <Text style={styles.text}>
             Shift:
             {' '}
-            {downEvent.flags?.shift ? 'YES' : 'NO'}
+            {upEvent.flags?.shift ? 'YES' : 'NO'}
           </Text>
           <Text style={styles.text}>
             Alt:
             {' '}
-            {downEvent.flags?.alt ? 'YES' : 'NO'}
+            {upEvent.flags?.alt ? 'YES' : 'NO'}
           </Text>
           <Text style={styles.text}>
             Control:
             {' '}
-            {downEvent.flags?.control ? 'YES' : 'NO'}
+            {upEvent.flags?.control ? 'YES' : 'NO'}
           </Text>
           <Text style={styles.text}>
             Meta:
             {' '}
-            {downEvent.flags?.meta ? 'YES' : 'NO'}
+            {upEvent.flags?.meta ? 'YES' : 'NO'}
           </Text>
           <Text style={styles.text}>
             Fn:
             {' '}
-            {downEvent.flags?.fn ? 'YES' : 'NO'}
+            {upEvent.flags?.fn ? 'YES' : 'NO'}
           </Text>
           <Text style={styles.text}>
             Caps Lock:
             {' '}
-            {downEvent.flags?.capsLock ? 'YES' : 'NO'}
+            {upEvent.flags?.capsLock ? 'YES' : 'NO'}
           </Text>
           <Text style={styles.text}>
             Numeric Pad:
             {' '}
-            {downEvent.flags?.numericPad ? 'YES' : 'NO'}
+            {upEvent.flags?.numericPad ? 'YES' : 'NO'}
           </Text>
         </>
       )}

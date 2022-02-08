@@ -28,13 +28,13 @@ GlobalKeyEvent.addKeyUpListener((evt) => {
 - Add dependency with `yarn add react-native-global-keyevent`
 - You may need to run `react-native link react-native-global-keyevent` or autolinking.
 
-### iOS
+### iOS / tvOS
 
 This module required to replace root view controller:
 
 ```patch
---- AppDelegate.m	2022-02-03 09:01:32.000000000 +0800
-+++ AppDelegate.m	2022-02-03 09:01:32.000000000 +0800
+--- AppDelegate.m	2022-02-09 07:32:28.000000000 +0800
++++ AppDelegate.m	2022-02-09 07:31:53.000000000 +0800
 @@ -3,6 +3,7 @@
  #import <React/RCTBridge.h>
  #import <React/RCTBundleURLProvider.h>
@@ -52,9 +52,12 @@ This module required to replace root view controller:
    rootViewController.view = rootView;
    self.window.rootViewController = rootViewController;
    [self.window makeKeyAndVisible];
+
 ```
 
 If you have own custom root view controller, you can follow [`ios/RNGlobalKeyEventViewController.m`](ios/RNGlobalKeyEventViewController.m).
+
+It's also supported iOS / tvOS version less than 13.4, but it only supports `keyUp` event.
 
 ### Android
 
