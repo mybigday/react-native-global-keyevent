@@ -4,7 +4,8 @@
 @implementation RNGlobalKeyEventViewController
 
 - (void) pressesBegan:(NSSet<UIPress *> *)presses withEvent:(UIPressesEvent *)event {
-  if (!@available(iOS 13.4, tvOS 13.4, *)) {
+  if (@available(iOS 13.4, tvOS 13.4, *)) {
+  } else {
     [super pressesBegan:presses withEvent: event];
     return;
   }
@@ -24,7 +25,8 @@
 }
 
 - (void) pressesEnded:(NSSet<UIPress *> *)presses withEvent:(UIPressesEvent *)event {
-  if (!@available(iOS 13.4, tvOS 13.4, *)) {
+  if (@available(iOS 13.4, tvOS 13.4, *)) {
+  } else {
     [super pressesEnded:presses withEvent: event];
     return;
   }
