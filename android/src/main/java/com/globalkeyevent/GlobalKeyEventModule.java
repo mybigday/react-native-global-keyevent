@@ -18,7 +18,6 @@ public class GlobalKeyEventModule extends ReactContextBaseJavaModule {
     private static GlobalKeyEventModule instance = null;
 
     public static GlobalKeyEventModule getInstance() {
-        if (instance == null) throw new RuntimeException("GlobalKeyEventModule is not initialized");
         return instance;
     }
 
