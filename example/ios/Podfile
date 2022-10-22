@@ -12,7 +12,7 @@ target 'example' do
     :hermes_enabled => false
   )
   
-  pod 'RNGlobalKeyEvent', :path => '../../ios'
+  pod 'RNGlobalKeyEvent', :path => '../..'
 
   target 'exampleTests' do
     inherit! :complete

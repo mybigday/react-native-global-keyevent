@@ -337,7 +337,7 @@ PODS:
     - React-jsi (= 0.66.3)
     - React-logger (= 0.66.3)
     - React-perflogger (= 0.66.3)
-  - RNGlobalKeyEvent (0.1.0):
+  - RNGlobalKeyEvent (0.1.2):
     - React-Core
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -396,7 +396,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
-  - RNGlobalKeyEvent (from `../../ios`)
+  - RNGlobalKeyEvent (from `../..`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -476,7 +476,7 @@ EXTERNAL SOURCES:
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
   RNGlobalKeyEvent:
-    :path: "../../ios"
+    :path: "../.."
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -523,10 +523,10 @@ SPEC CHECKSUMS:
   React-RCTVibration: 50cfe7049167cfc7e83ac5542c6fff0c76791a9b
   React-runtimeexecutor: bbbdb3d8fcf327c6e2249ee71b6ef1764b7dc266
   ReactCommon: 9bac022ab71596f2b0fde1268272543184c63971
-  RNGlobalKeyEvent: d85985cbf9ad54052d4954fc7f5fe0c1789680fd
+  RNGlobalKeyEvent: c50ab672918e236915f7ce75377dc4bd0e2c7736
   Yoga: 32a18c0e845e185f4a2a66ec76e1fd1f958f22fa
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: bfa985b45333dccfb2508ea3535161766d34869e
+PODFILE CHECKSUM: 5bc5efebf5c87254e19640a1921bc71aac5eb9f2
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
