@@ -38,12 +38,14 @@ static RNGlobalKeyEvent *sharedInstance = nil;
 }
 
 - (void)sendKeyUp:(NSString *)keyString modifierFlags:(UIKeyModifierFlags)modifierFlags {
+    if (keyString == nil) return;
     if (self.hasListeners && self.bridge) {
         [super sendEventWithName:keyUp body:@{@"pressedKey": keyString, @"modifierFlags": @(modifierFlags)}];
     }
 }
 
 - (void)sendKeyDown:(NSString *)keyString modifierFlags:(UIKeyModifierFlags)modifierFlags {
+    if (keyString == nil) return;
     if (self.hasListeners && self.bridge) {
         [super sendEventWithName:keyDown body:@{@"pressedKey": keyString, @"modifierFlags": @(modifierFlags)}];
     }
