@@ -22,6 +22,8 @@
   }
   UIKey *key = press.key;
   [keyEvent sendKeyDown:key.characters modifierFlags:key.modifierFlags];
+
+  [super pressesBegan:presses withEvent: event];
 }
 
 - (void) pressesEnded:(NSSet<UIPress *> *)presses withEvent:(UIPressesEvent *)event {
@@ -43,6 +45,8 @@
   }
   UIKey *key = press.key;
   [keyEvent sendKeyUp:key.characters modifierFlags:key.modifierFlags];
+
+  [super pressesEnded:presses withEvent: event];
 }
 
 #pragma mark - iOS < 13.4 supports
